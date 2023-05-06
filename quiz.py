@@ -1,5 +1,5 @@
 
-    #Family Guy Quiz
+    #Family Guy Quiz Questions and Answer key
 QUESTIONS = [
     ("When the family became the Super Griffins, what was Chris's superpower?", "He can start fires with his mind"),
     ("Who provides the voice of Peter Griffin?", "Seth Macfarlane"),
@@ -11,18 +11,18 @@ QUESTIONS = [
     ("What did Peter and Lois's pet rock do the first day they took it home?", "It peed on the carpet"),
     ("What did Peter want to name Meg when she was born?", "Twiki"),
     ("When Peter turns the house into a puppet, what does it say?", "Bring me a toolshed, for I am hungry"),
-    #General Knowledge Quiz
+    #General Knowledge Quiz Questions and Answer key
     ("What age is the recorded longest age that an elephant has ever lived?", "86 years"),
     ("what is a Tarsier?", "A Primate"),
     ("In darts, what is the most points you can score with a single throw?", "60"),
-    ("Which of these animals does NOT APPEAR in the Chinese Zodiac?", "Bear"),
+    ("Which of these animals does NOT appear in the Chinese Zodiac?", "Bear"),
     ("What is a Pomelo?", "The largest citrus fruit"),
     ("Who killed Greedo?", "Han Solo"),
-    ("How many points is the letter X worth in Scrabble?", "8"),
+    ("How many points is the letter X worth in Scrabble?", "Eight"),
     ("Who are known as Brahmins?", "Members of India's highest castle"),
     ("How many holes are on a standard bowling ball?", "3"),
     ("How did Spider-man get his powers?", "Bitten by a radioactive spider"),
-    #Capital Cities Of The World
+    #Capital Cities Of The World Questions and Answer key
     ("What is the capital of Spain?", "Madrid"),
     ("What is the capital of Italy?", "Rome"),
     ("What is the capital of Germany?", "Berlin"),
@@ -36,18 +36,7 @@ QUESTIONS = [
 
 ]
 
-
-
-
-
-
-
-
-
-
-
-
-
+#Family Guy Quiz Questions and Multiple choice answers
 
 QUESTIONS = {
     "When the family became The Super Griffins, what was Chris's superpower?": [
@@ -92,7 +81,10 @@ QUESTIONS = {
 
     ],
     "What did Peter want to name Meg when she was born?": [
-         "Princess Fairybottom", "Heavenly Hiraani Tiger Lily Hutchence Geldof-Griffin", "Twiki", "Dianne Simmons Griffin",
+        "Princess Fairybottom",
+        "Heavenly Hiraani Tiger Lily Hutchence Geldof-Griffin",
+        "Twiki", 
+        "Dianne Simmons Griffin",
 
     ],
     "When Peter turns the house into a puppet, what does it say?": [
@@ -100,7 +92,62 @@ QUESTIONS = {
         "Bring me Kevin Bacon nomnomnom",
         "Hey you! What you lookin at!",
         "Hey Lois! Look at me!",
+    #General knowledge quiz questions and multiple choice answers
     ],
+    "What is age is the longest recorded age that an elephant has ever lived?": [
+        "17 years", "49 years", "86 years", "142 years",
+
+    ],
+    "What is a Tarsier?": [
+        "A bird", "A marsupial", "A lizard", "A primate",
+
+    ],
+    "In darts, what's the most points you can score with a single throw?": [
+        "20 points", "50 points", "60 points", "100 points",
+
+    ],
+    "Which of these animals does NOT appear in the Chinese zodiac?": [
+        "Bear", "Dog", "Dragon", "Rabbit",
+
+    ],
+    "What is a Pomelo?": [
+        "A breed of dog", 
+        "An old fashioned punching bag", 
+        "A type of hat", 
+        "The largest citrus fruit",
+
+    ],
+    "Who killed Greedo?": [
+        "Hannibal Lecter", "Han Solo", "Harry Potter", "Hercules",
+
+    ],
+    "How many points is the letter X worth in Scrabble?": [
+        "Zero", "Eleven", "Four", "Eight",
+
+    ],
+    "Who are known as Brahmins?": [
+        "Surfers in California", 
+        "Members of India's highest caste", 
+        "It's a totally made up word", 
+        "Hill people from the Appalachian Mountains",
+
+    ],
+    "How many holes are on a standard bowling ball?": [
+        "Two", "Five", "Three", "Seven",
+
+    ],
+    "How did Spider-man get his powers?": [
+        "He was born with them",
+        "Military experiment gone horribly wrong",
+        "Bitten by a radioactive spider",
+        "Woke up with them after a strange dream",
+
+    ],
+    
+
+
+
+
 
 
 }
