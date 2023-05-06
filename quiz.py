@@ -142,8 +142,50 @@ QUESTIONS = {
         "Bitten by a radioactive spider",
         "Woke up with them after a strange dream",
 
+    #Capital Cities of the World questions and Multiple choice answers
     ],
-    
+    "What is the capital of Spain?": [
+        "Salvador", "Gqeberha", "Belmopan", "Madrid",
+
+    ],
+    "What is the capital of Italy?": [
+        "Ankara", "Gyros", "Rome", "Reggiano",
+
+    ],
+    "What is the capital of Germany?": [
+        "Bruge", "Berlin", "Bandung", "Brassels",
+
+    ],
+    "What is the capital of Canada?": [
+        "Toronto", " Ottawa", "Winnipeg", "Montreal",
+
+    ],
+    "What is the capital of Lebanon?": [
+        "Durban", "Beirut", "Gaborone", "Lagos",
+
+    ],
+    "What is the capital of Argentina?": [
+        "Nelson", "Buenos Aires", "Brasilia", "Dodoma",
+
+    ],
+    "What is the capital of Brazil?": [
+        "Brasilia", "Dodoma", "Mombasa", "Doha",
+
+    ],
+    "What is the capital of Colombia?": [
+        "Mandalay", "Bern", "Edirne", "Bogota",
+
+    ],
+    "What is the capital of North Korea?": [
+        "Bloemfontein", "Pyongyang", "Port Harcourt", "Gyeongbokgung",
+
+    ],
+    "What is the capital of Kenya?": [
+        "Kisumu", "Nairobi", "Namibia", "Georgetown",
+
+    ],
+
+
 
 
 
