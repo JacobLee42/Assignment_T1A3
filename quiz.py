@@ -14,13 +14,13 @@ QUESTIONS = [
     #General Knowledge Quiz Questions and Answer key
     ("What age is the recorded longest age that an elephant has ever lived?", "86 years"),
     ("what is a Tarsier?", "A Primate"),
-    ("In darts, what is the most points you can score with a single throw?", "60"),
+    ("In darts, what is the most points you can score with a single throw?", "60 points"),
     ("Which of these animals does NOT appear in the Chinese Zodiac?", "Bear"),
     ("What is a Pomelo?", "The largest citrus fruit"),
     ("Who killed Greedo?", "Han Solo"),
     ("How many points is the letter X worth in Scrabble?", "Eight"),
-    ("Who are known as Brahmins?", "Members of India's highest castle"),
-    ("How many holes are on a standard bowling ball?", "3"),
+    ("Who are known as Brahmins?", "Members of India's highest caste"),
+    ("How many holes are on a standard bowling ball?", "Three"),
     ("How did Spider-man get his powers?", "Bitten by a radioactive spider"),
     #Capital Cities Of The World Questions and Answer key
     ("What is the capital of Spain?", "Madrid"),
@@ -39,7 +39,7 @@ QUESTIONS = [
 #Family Guy Quiz Questions and Multiple choice answers
 
 QUESTIONS = {
-    "When the family became The Super Griffins, what was Chris's superpower?": [
+    "When the family became the Super Griffins, what was Chris's superpower?": [
         "Super Speed",
         "He can turn invisible",
         "He can control lemmings by whistling",
