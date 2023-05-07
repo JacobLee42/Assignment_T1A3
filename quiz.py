@@ -1,6 +1,7 @@
 import sys
 from questions import QUESTIONS
 from string import ascii_lowercase
+import random
     #Providing multiple choices for answers. Updated Questions and answers - 
     #Changed QUESTIONS to a dictionary where the keys are the questions and the values are the list of answer alternatives.
 
@@ -51,13 +52,17 @@ def run_quiz(player_name):
         leaderboard = [(int(score), name) for score, name in leaderboard]
         leaderboard.sort(reverse=True)
         leaderboard = leaderboard[:10]
-
+#Shuffle the questions and select first 7
+    random_questions = random.sample(list(QUESTIONS.items()), 7)
 
     for num, (question, alternatives) in enumerate(QUESTIONS.items(), start = 1):
         print(f"\nQuestion {num}:")
         print(f"{question}?")
         correct_answer = alternatives[0]
-        labeled_alternatives = dict(zip(ascii_lowercase, sorted(alternatives)))
+        #Shuffle the alternatives
+        random_alternatives = random.sample(alternatives, len(alternatives))
+        labeled_alternatives = dict(zip(ascii_lowercase, random_alternatives))
+
         for label, alternative in labeled_alternatives.items():
                 print(f"  {label}) {alternative}")
 
@@ -66,7 +71,7 @@ def run_quiz(player_name):
         if answer == correct_answer:
             num_correct += 1
             score += 695
-            print("* Correct! *")
+            print(" That is Correct! ")
             if score > high_score:
                 high_score = score
         else:
