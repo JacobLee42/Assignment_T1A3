@@ -182,6 +182,12 @@ QUESTIONS = {
 
  #Organised the jumbled alternative answers as sorted_alternatives. 
  # Input always returns a string so remebered to convert to an interger before using it the function.
+#added num_correct function to keep track of user correct guesses. Worked out how to add score and high score tallies to function.
+num_correct = 0
+score = 0
+high_score = 0
+
+
 
 for num, (question, alternatives) in enumerate(QUESTIONS.items(), start = 1):
     print(f"\nQuestion {num}:")
@@ -194,6 +200,17 @@ for num, (question, alternatives) in enumerate(QUESTIONS.items(), start = 1):
     answer_label = input("\nChoice? ")
     answer = labeled_alternatives.get(answer_label) 
     if answer == correct_answer:
+        num_correct += 1
+        score += 695
         print("* Correct! *")
+        if score > high_score:
+            high_score = score
     else:
         print(f"The answer is {correct_answer!r}, not {answer!r}")
+        score += 0
+
+print(f"\nYou got {num_correct} correct out of {num} questions")
+print(f"Your score is {score}")
+print(f"High score is {high_score}")
+
+
