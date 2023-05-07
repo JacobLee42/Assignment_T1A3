@@ -1,158 +1,12 @@
+import sys
+from questions import QUESTIONS
 from string import ascii_lowercase
     #Providing multiple choices for answers. Updated Questions and answers - 
     #Changed QUESTIONS to a dictionary where the keys are the questions and the values are the list of answer alternatives.
 
     #Family Guy Quiz Questions and Multiple choice answers
 
-QUESTIONS = {
-    "When the family became the Super Griffins, what was Chris's superpower?": [
-        "He can start fires with his mind",
-        "Super Speed",
-        "He can turn invisible",
-        "He can control lemmings by whistling",
-        
 
-    ],
-    "Who provides the voice of Peter Griffin?": [
-        "Seth MacFarlane",
-        "Brian Peter Green",
-        "Seth Rogan",
-        "Bill Burr",
-        
-
-    ],
-    "How old is Brian the dog in dog years?": [
-        "Seven","One", "Nine", "Five",
-
-    ],
-    "Fill in the blank on this letter written by Peter; Dear_____, enclosed is a rubber band, a paper clip and a drinking straw. Please save my dog.": [
-        "MacGyver","Magnum P.I.", "Die Hard", "Harry Potter", 
-
-    ],
-    "Peter begins exploiting Lois's fighting ability after she learns what fictional martial art?": [
-        "Tae-Jitsu", "Tae-Bo", "Fight Club", "Tang-soo-do",
-
-    ],
-    "Who provides the voice of Meg Griffin?": [
-        "Mila Kunis","Meg Ryan", "Jodie Foster", "Nancy Cartwright", 
-
-    ],
-    "Peter's great great uncle Agnus Griffin invented what sport?": [
-        "Golf","Badmington", "Frisbee Golf", "Synchronised Swimming",
-
-    ],
-    "What did Peter and Lois's pet rock do the first day they took it home?": [
-        "It peed on the carpet",
-        "It ran into oncoming traffic",
-        "It attacked the mailman",
-        "It ate all the food that was on the table for dinner",
-
-    ],
-    "What did Peter want to name Meg when she was born?": [
-        "Twiki",
-        "Princess Fairybottom",
-        "Heavenly Hiraani Tiger Lily Hutchence Geldof-Griffin",
-        "Dianne Simmons Griffin",
-
-    ],
-    "When Peter turns the house into a puppet, what does it say?": [
-        "Bring me a toolshed, for I am hungry",
-        "Bring me Kevin Bacon nomnomnom",
-        "Hey you! What you lookin at!",
-        "Hey Lois! Look at me!",
-    #General knowledge quiz questions and multiple choice answers
-    ],
-    "What is age is the longest recorded age that an elephant has ever lived?": [
-        "86 years","17 years", "49 years", "142 years",
-
-    ],
-    "What is a Tarsier?": [
-        "A primate","A bird", "A marsupial", "A lizard", 
-
-    ],
-    "In darts, what's the most points you can score with a single throw?": [
-       "60 points", "20 points", "50 points", "100 points",
-
-    ],
-    "Which of these animals does NOT appear in the Chinese zodiac?": [
-        "Bear", "Dog", "Dragon", "Rabbit",
-
-    ],
-    "What is a Pomelo?": [
-        "The largest citrus fruit",
-        "A breed of dog", 
-        "An old fashioned punching bag", 
-        "A type of hat", 
-        
-
-    ],
-    "Who killed Greedo?": [
-        "Han Solo", "Hannibal Lecter", "Harry Potter", "Hercules",
-
-    ],
-    "How many points is the letter X worth in Scrabble?": [
-        "Eight", "Zero", "Eleven", "Four", 
-
-    ],
-    "Who are known as Brahmins?": [
-        "Members of India's highest caste",
-        "Surfers in California",  
-        "It's a totally made up word", 
-        "Hill people from the Appalachian Mountains",
-
-    ],
-    "How many holes are on a standard bowling ball?": [
-        "Three", "Two", "Five", "Seven",
-
-    ],
-    "How did Spider-man get his powers?": [
-        "Bitten by a radioactive spider",
-        "He was born with them",
-        "Military experiment gone horribly wrong",
-        "Woke up with them after a strange dream",
-
-    #Capital Cities of the World questions and Multiple choice answers
-    ],
-    "What is the capital of Spain?": [
-        "Madrid", "Salvador", "Gqeberha", "Belmopan", 
-
-    ],
-    "What is the capital of Italy?": [
-        "Rome", "Ankara", "Gyros", "Reggiano",
-
-    ],
-    "What is the capital of Germany?": [
-       "Berlin", "Bruge", "Bandung", "Brassels",
-
-    ],
-    "What is the capital of Canada?": [
-        "Ottawa", "Toronto", "Winnipeg", "Montreal",
-
-    ],
-    "What is the capital of Lebanon?": [
-        "Beirut", "Durban", "Gaborone", "Lagos",
-
-    ],
-    "What is the capital of Argentina?": [
-        "Buenos Aires", "Nelson", "Brasilia", "Dodoma",
-
-    ],
-    "What is the capital of Brazil?": [
-        "Brasilia", "Dodoma", "Mombasa", "Doha",
-
-    ],
-    "What is the capital of Colombia?": [
-        "Bogota", "Mandalay", "Bern", "Edirne",
-
-    ],
-    "What is the capital of North Korea?": [
-        "Pyongyang", "Bloemfontein", "Port Harcourt", "Gyeongbokgung",
-
-    ],
-    "What is the capital of Kenya?": [
-        "Nairobi", "Kisumu", "Namibia", "Georgetown",
-
-    ],
 
 
 #Updated code from main.py to loop over the new dictionary. 
@@ -164,7 +18,7 @@ QUESTIONS = {
 #Updated the code to use the enumerate() function to print the index of each answer alternative.
 
 
-}
+
 
 #for question, alternatives in QUESTIONS.items():
 #    correct_answer = alternatives[0]
@@ -183,34 +37,63 @@ QUESTIONS = {
  #Organised the jumbled alternative answers as sorted_alternatives. 
  # Input always returns a string so remebered to convert to an interger before using it the function.
 #added num_correct function to keep track of user correct guesses. Worked out how to add score and high score tallies to function.
-num_correct = 0
-score = 0
-high_score = 0
+def run_quiz(player_name):
+    num_correct = 0
+    score = 0
+    high_score = 0
+
+#Wrote leaderboard.txt to create file when first high score is recorded on player first walkthrough of game. Appends the leaderboard list (high score)
+    with open('leaderboard.txt', 'a+') as f:
+        f.seek(0)
+        leaderboard = f.readlines()
+        leaderboard = [line.strip() for line in leaderboard]
+        leaderboard = [line.split(',') for line in leaderboard]
+        leaderboard = [(int(score), name) for score, name in leaderboard]
+        leaderboard.sort(reverse=True)
+        leaderboard = leaderboard[:10]
 
 
+    for num, (question, alternatives) in enumerate(QUESTIONS.items(), start = 1):
+        print(f"\nQuestion {num}:")
+        print(f"{question}?")
+        correct_answer = alternatives[0]
+        labeled_alternatives = dict(zip(ascii_lowercase, sorted(alternatives)))
+        for label, alternative in labeled_alternatives.items():
+                print(f"  {label}) {alternative}")
 
-for num, (question, alternatives) in enumerate(QUESTIONS.items(), start = 1):
-    print(f"\nQuestion {num}:")
-    print(f"{question}?")
-    correct_answer = alternatives[0]
-    labeled_alternatives = dict(zip(ascii_lowercase, sorted(alternatives)))
-    for label, alternative in labeled_alternatives.items():
-        print(f"  {label}) {alternative}")
+        answer_label = input("\nChoice? ")
+        answer = labeled_alternatives.get(answer_label) 
+        if answer == correct_answer:
+            num_correct += 1
+            score += 695
+            print("* Correct! *")
+            if score > high_score:
+                high_score = score
+        else:
+            print(f"The answer is {correct_answer!r}, not {answer!r}")
+            score += 0
 
-    answer_label = input("\nChoice? ")
-    answer = labeled_alternatives.get(answer_label) 
-    if answer == correct_answer:
-        num_correct += 1
-        score += 695
-        print("* Correct! *")
-        if score > high_score:
-            high_score = score
-    else:
-        print(f"The answer is {correct_answer!r}, not {answer!r}")
-        score += 0
-
-print(f"\nYou got {num_correct} correct out of {num} questions")
-print(f"Your score is {score}")
-print(f"High score is {high_score}")
+    if (score, player_name) > leaderboard[-1]:
+         with open('leaderboard.txt', 'w') as f:
+              leaderboard.append((score, player_name))
+              leaderboard.sort(reverse=True)
+              leaderboard = leaderboard[:10]
+              leaderboard = [f"{score},{name}" for score, name in leaderboard]
+              f.write('\n'.join(leaderboard))
+         
 
 
+    print(f"\nYou got {num_correct} correct out of {num} questions")
+    print(f"Your score is {score}")
+    print(f"High score is {high_score}")
+
+    return True if input("Do you want to play again? (y/n) ").lower() == 'y' else False
+
+def view_leaderboard():
+     with open('leaderboard.txt', 'r') as f:
+          leaderboard = f.readlines()
+          leaderboard = [line.strip().split(',') for line in leaderboard]
+          leaderboard = [(int(score), name) for score, name in leaderboard]
+          leaderboard.sort(reverse=True)
+          for rank, (score, name) in enumerate(leaderboard, start=1):
+               print(f"{rank}, {name}: {score}")
