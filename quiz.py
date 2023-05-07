@@ -55,7 +55,7 @@ def run_quiz(player_name):
 #Shuffle the questions and select first 7
     random_questions = random.sample(list(QUESTIONS.items()), 7)
 
-    for num, (question, alternatives) in enumerate(QUESTIONS.items(), start = 1):
+    for num, (question, alternatives) in enumerate(random_questions, start = 1):
         print(f"\nQuestion {num}:")
         print(f"{question}?")
         correct_answer = alternatives[0]
@@ -93,6 +93,8 @@ def run_quiz(player_name):
     print(f"High score is {high_score}")
 
     return True if input("Do you want to play again? (y/n) ").lower() == 'y' else False
+
+
 
 def view_leaderboard():
      with open('leaderboard.txt', 'r') as f:
