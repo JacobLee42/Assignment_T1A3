@@ -1,7 +1,7 @@
 import sys
 from questions import QUESTIONS
 from string import ascii_lowercase
-import random
+import random  
     #Providing multiple choices for answers. Updated Questions and answers - 
     #Changed QUESTIONS to a dictionary where the keys are the questions and the values are the list of answer alternatives.
 
@@ -104,3 +104,4 @@ def view_leaderboard():
           leaderboard.sort(reverse=True)
           for rank, (score, name) in enumerate(leaderboard, start=1):
                print(f"{rank}, {name}: {score}")
+ 
