@@ -1,4 +1,4 @@
-
+from string import ascii_lowercase
     #Providing multiple choices for answers. Updated Questions and answers - 
     #Changed QUESTIONS to a dictionary where the keys are the questions and the values are the list of answer alternatives.
 
