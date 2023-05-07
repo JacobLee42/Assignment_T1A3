@@ -17,10 +17,10 @@ def main_menu():
             play_again = run_quiz(name)
             if not play_again:
                 print("Thank you for playing Kapuut! Hope to see you back here real soon!!!")
-            continue
+            break
         elif choice == "2":
             view_leaderboard()
-            continue
+            
         elif choice == "3":
             print("Thank you for playing hope to see you soon!!!")
             break

@@ -93,7 +93,7 @@ def run_quiz(player_name):
     print(f"High score is {high_score}")
 
     return True if input("Do you want to play again? (y/n) ").lower() == 'y' else False
-
+   
 
 
 def view_leaderboard():
