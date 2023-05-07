@@ -78,7 +78,7 @@ def run_quiz(player_name):
             print(f"The answer is {correct_answer!r}, not {answer!r}")
             score += 0
 
-    if (score, player_name) > leaderboard[-1]:
+    if not leaderboard or (score, player_name) > leaderboard[-1]:
          with open('leaderboard.txt', 'w') as f:
               leaderboard.append((score, player_name))
               leaderboard.sort(reverse=True)
