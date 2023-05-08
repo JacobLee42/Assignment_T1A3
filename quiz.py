@@ -2,70 +2,43 @@ import sys
 from questions import QUESTIONS
 from string import ascii_lowercase
 import random  
-    #Providing multiple choices for answers. Updated Questions and answers - 
-    #Changed QUESTIONS to a dictionary where the keys are the questions and the values are the list of answer alternatives.
-
-    #Family Guy Quiz Questions and Multiple choice answers
-
-
-
-
-#Updated code from main.py to loop over the new dictionary. 
-# For each question, you print the list of answers and then try to pick out the correct answer.
-#Then I worked out how to use the sort() function to change the order of the answer alternatives.
-#Added a label to each alternative and ask user to enter the label.
-
-
-#Updated the code to use the enumerate() function to print the index of each answer alternative.
-
-
-
-
-#for question, alternatives in QUESTIONS.items():
-#    correct_answer = alternatives[0]
-#    sorted_alternatives = sorted(alternatives)
-#    for label, alternative in enumerate(sorted_alternatives): 
- #       print(f" {label}) {alternative}")
-
- #   answer_label = int(input(f"{question}? "))
- #   answer = sorted_alternatives[answer_label]
- #   if answer == correct_answer:
- #      print("Correct!")
- #   else:
- #      print(f"The answer is {correct_answer!r}, not {answer!r}")
-
-
- #Organised the jumbled alternative answers as sorted_alternatives. 
- # Input always returns a string so remebered to convert to an interger before using it the function.
-#added num_correct function to keep track of user correct guesses. Worked out how to add score and high score tallies to function.
+    
 def run_quiz(player_name):
     num_correct = 0
     score = 0
     high_score = 0
 
-#Wrote leaderboard.txt to create file when first high score is recorded on player first walkthrough of game. Appends the leaderboard list (high score)
+    #Wrote leaderboard.txt to create file when first high score is recorded on player first walkthrough of game. Appends the leaderboard list (high score)
+    #Open leaderboard.txt file. If it doesnt exist, create it
+
     with open('leaderboard.txt', 'a+') as f:
         f.seek(0)
+        #Read the file and store each line as an element in the list
         leaderboard = f.readlines()
+        #Strip any whitespace from each line
         leaderboard = [line.strip() for line in leaderboard]
+        #Split each line by comma to seperate score and name
         leaderboard = [line.split(',') for line in leaderboard]
+        #Convert each score to an interger and create a list of tuples with score and name
         leaderboard = [(int(score), name) for score, name in leaderboard]
+        #Sort the list of tuples by score in descending order
         leaderboard.sort(reverse=True)
+        #Only keep the top 10 scores
         leaderboard = leaderboard[:10]
-#Shuffle the questions and select first 7
+    #Shuffle the questions and select first 7
     random_questions = random.sample(list(QUESTIONS.items()), 7)
-
+    #Loop through each question and its alternatives
     for num, (question, alternatives) in enumerate(random_questions, start = 1):
         print(f"\nQuestion {num}:")
         print(f"{question}?")
         correct_answer = alternatives[0]
-        #Shuffle the alternatives
+        #Shuffle the alternatives and label the with letters
         random_alternatives = random.sample(alternatives, len(alternatives))
         labeled_alternatives = dict(zip(ascii_lowercase, random_alternatives))
-
+        #Print each alternative with its letter label
         for label, alternative in labeled_alternatives.items():
                 print(f"  {label}) {alternative}")
-
+        #Prompt user to select an answer and check if it is correct
         answer_label = input("\nChoice? ")
         answer = labeled_alternatives.get(answer_label) 
         if answer == correct_answer:
@@ -77,7 +50,7 @@ def run_quiz(player_name):
         else:
             print(f"The answer is {correct_answer!r}, not {answer!r}")
             score += 0
-
+    #If the players score is higher than any score on the leaderboard, add it to leaderboard
     if not leaderboard or (score, player_name) > leaderboard[-1]:
          with open('leaderboard.txt', 'w') as f:
               leaderboard.append((score, player_name))
@@ -87,7 +60,7 @@ def run_quiz(player_name):
               f.write('\n'.join(leaderboard))
          
 
-
+    #Print the player's results and asks if they want to play again
     print(f"\nYou got {num_correct} correct out of {num} questions")
     print(f"Your score is {score}")
     print(f"High score is {high_score}")
@@ -95,13 +68,17 @@ def run_quiz(player_name):
     return True if input("Do you want to play again? (y/n) ").lower() == 'y' else False
    
 
-
+    #Open leaderboard.txt and read its contents
 def view_leaderboard():
      with open('leaderboard.txt', 'r') as f:
           leaderboard = f.readlines()
+          #Strip any whitespace from each line
           leaderboard = [line.strip().split(',') for line in leaderboard]
+          #Convert each score to an interger and create a list of tuples with score and name  
           leaderboard = [(int(score), name) for score, name in leaderboard]
+          #Sort the list of tuples by score in descending order
           leaderboard.sort(reverse=True)
-          for rank, (score, name) in enumerate(leaderboard, start=1):
+          #Print each score and name in the leaderboard with its rank  
+          for rank, (score, name) in enumerate(leaderboard, start=1):  
                print(f"{rank}, {name}: {score}")
  
