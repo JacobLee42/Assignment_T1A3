@@ -2,7 +2,8 @@ import sys
 from questions import QUESTIONS
 from string import ascii_lowercase
 import random  
-    
+import time   
+
 def run_quiz(player_name):
     num_correct = 0
     score = 0
@@ -38,18 +39,32 @@ def run_quiz(player_name):
         #Print each alternative with its letter label
         for label, alternative in labeled_alternatives.items():
                 print(f"  {label}) {alternative}")
-        #Prompt user to select an answer and check if it is correct
+
+        #Prompt user to select an answer and check if it is correct plus timer function
+        start_time = time.time()
         answer_label = input("\nChoice? ")
-        answer = labeled_alternatives.get(answer_label) 
-        if answer == correct_answer:
+        elapsed_time = time.time() - start_time
+        time_left = 13 - elapsed_time
+        if time_left < 0:
+             time_left = 0
+        score_per_second = 695 // 6
+        score += max(0, int((time_left // 2) * -score_per_second))
+        if answer_label.strip() == "" or time_left == 0:
+             print(f"You ran out of time!!! The answer is {correct_answer!r}.")
+             
+        elif labeled_alternatives.get(answer_label) == correct_answer:
             num_correct += 1
-            score += 695
+            score += max(0, int(time_left * score_per_second))
             print(" That is Correct! ")
             if score > high_score:
                 high_score = score
         else:
-            print(f"The answer is {correct_answer!r}, not {answer!r}")
-            score += 0
+            print(f"Incorrect! The answer is {correct_answer!r}.")
+        #Prompt the user to press enter to continue
+        input("\nPress enter to continue to the next question...")
+            
+
+
     #If the players score is higher than any score on the leaderboard, add it to leaderboard
     if not leaderboard or (score, player_name) > leaderboard[-1]:
          with open('leaderboard.txt', 'w') as f:
