@@ -3,7 +3,7 @@ import sys
 from questions import QUESTIONS
 from string import ascii_lowercase
 import random  
- 
+import time
 
 from quiz import run_quiz, view_leaderboard
 
