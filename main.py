@@ -2,8 +2,7 @@
 import sys
 from questions import QUESTIONS
 from string import ascii_lowercase
-import random  
-import time
+ 
 
 from quiz import run_quiz, view_leaderboard
 
@@ -17,6 +16,13 @@ def main_menu():
         choice = input("Enter your choice (1-3): ")
         if choice == "1":
             name = input("Enter your name: ")
+            print("Welcome to Kapuut Quiz Game!")
+            print("you will be asked 7 multiple choice questions.")
+            print("Each question has a time limit of 13 seconds. You will not be able to see it. Exciting, right!!")
+            print("You will earn points for each correct answer.")
+            print ("The faster you answer, the more points you earn!!!")
+            print("Good luck ALL!!!\n")
+
             play_again = run_quiz(name)
             if not play_again:
                 print("Thank you for playing Kapuut! Hope to see you back here real soon!!!")
