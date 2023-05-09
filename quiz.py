@@ -73,7 +73,9 @@ def run_quiz(player_name):
               leaderboard = leaderboard[:10]
               leaderboard = [f"{score},{name}" for score, name in leaderboard]
               f.write('\n'.join(leaderboard))
-         
+         if score > high_score:
+              high_score = score
+              print("Wow! You got a high score!! Congratulations!!!")
 
     #Print the player's results and asks if they want to play again
     print(f"\nYou got {num_correct} correct out of {num} questions")
