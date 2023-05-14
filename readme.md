@@ -7,7 +7,7 @@
 ## Identify any code style guide or styling conventions that the application will adhere to. Reference the style guide appropriately.
 
 Welcome to my Terminal Application project! I decided to design a multiple choice quiz game based on our favourite classroom learning game - Kahoot! The game has features similar to the Kahoot game we all love (except for the timer/sliding point scale - but that's a whole other story).
-
+ 
 So this project is essentially making sure that we understand how to write terminal applications and utilise and understand the python programming language.
 
 In class I believe that we use PEP 8 as our styling guide and it is the official style guide for python code. PEP 8 was written by the creator of python, Guido van Rossum, and it provides guidelines for writing readable and consistant code. PEP stands for Python Enhancement Proposal and it covers topics such as naming conventions, indentation and code layout. Some of the key guidelines in PEP include:
