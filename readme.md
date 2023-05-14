@@ -2,8 +2,8 @@
 ## Plan and Implement a Terminal Application 
 ### Kapuut (Kahoot karbon kopy)
 
-Link to Github source repository: https://github.com/JacobLee42/Assignment_T1A3/tree/main
-
+## Link to Github source repository: https://github.com/JacobLee42/Assignment_T1A3/tree/main
+## Link to youtube slide presentation: https://youtu.be/nmaFtCD_B9s
 ## Identify any code style guide or styling conventions that the application will adhere to. Reference the style guide appropriately.
 
 Welcome to my Terminal Application project! I decided to design a multiple choice quiz game based on our favourite classroom learning game - Kahoot! The game has features similar to the Kahoot game we all love (except for the timer/sliding point scale - but that's a whole other story).
@@ -64,5 +64,73 @@ https://www.w3schools.com/PYTHON/python_scope.asp
 https://pythonbasics.org/scope/
 
 Coder academy recorded class session T1W7 Tuesday: Loops, Functions
-  
+
+
+## Link to my Trello project management plan: 
+https://trello.com/b/63HOEnUC/jacob-quiz-checklist
+
+### Link to how to use Trello:
+https://www.youtube.com/watch?v=6drUzoeHZkg 
+
+
+## Design help documentation which includes a set of instructions which accurately describe how to use and install the app.
+
+# Kapuut Help Documentation
+## Installation
+1. Open a terminal (I use wsl(Unbutu)) and navigate to the directory you want to use.
+2. In the terminal type ./run.sh and the game should load automatically once the packages are installed. Easy Peasy!
+    If it doesn't work...
+
+1. Make sure you have python 3 installed on your system. In the command prompt and enter the following:
+    python3 --version
+    this will show current version of python installed on your computer. I have wsl as stated before so to install python 3 you enter:
+    sudo apt-get install python3
+2. Then run these commands to create a virtual environment before we install the requirements:
+    python 3 -m venv kapuut-venv
+    source kapuut-venv/bin/activate
+3. Install the dependencies required by the app to run by enetring:
+    pip3 install -r requirements.txt
+
+
+## System Requirements
+ Python 3
+ A terminal or command prompt
+
+ ## Usage
+ Make sure you are in the Kapuut-venv directory. You will see this in your terminal. Run the game by entering this:
+ python3 main.py
+
+ THATS IT!!!
+
+
+ 
+ # RESOURCES
+
+ ### These are what I used to help me create the terminal application:
+
+  https://www.youtube.com/watch?v=QPp09g8Rspg
+
+  https://www.makeuseof.com/python-make-interactive-quiz-game/
+
+  https://brockbyrdd.medium.com/creating-a-multiple-choice-quiz-in-python-terminal-1c46123b86d5
+
+  https://pythonprogramming.altervista.org/how-to-generate-multiple-choice-questions-with-python/
+
+  https://stackoverflow.com/questions/60576809/how-do-i-implement-a-timer-on-each-question-asked-in-a-quiz
+
+  https://www.geeksforgeeks.org/how-to-create-a-countdown-timer-using-python/
+
+  https://discuss.python.org/t/implementing-a-countdown-in-a-quiz-game-that-resets-upon-answer-and-starts-over-from-scratch-on-new-question-given/20738
+
+  https://pypi.org/
+
+  https://blog.inedo.com/python/modularization-and-packages/
+
+  https://www.youtube.com/watch?v=PBUtAdR1n6g
+
+  https://towardsdatascience.com/cleaning-refactoring-and-modular-the-must-foundations-to-improve-your-python-code-and-carrer-65ef71cdb264
+
+  https://www.youtube.com/watch?v=StQO2oaOMw4
+
+  All videos of classes from week 7 and week 8 about anything python, including Simons mock app we did on Sat week 8 was very helpful.
 
